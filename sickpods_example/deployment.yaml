@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sickpod-example
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: sickpod-example
+  template:
+    metadata:
+      labels:
+        app: sickpod-example
+    spec:
+      containers:
+      - name: sickpod-example
+        image: nginx
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "50m"
+        readinessProbe:
+          httpGet:
+            path: /not-exist
+            port: 80
+          failureThreshold: 1
+          periodSeconds: 10
+        ports:
+        - containerPort: 80

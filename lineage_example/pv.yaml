@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: lineage-test
+spec:
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 1Gi
+  claimRef:
+    name: lineage-test
+    namespace: default
+  hostPath:
+    path: "/tmp/busybox-lineage"
