@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-stern
+  namespace: default
+  labels:
+    name: busybox-stern
+spec:
+  containers:
+    - name: first
+      image: busybox
+      command: ["/bin/sh", "-c", "while true;do sleep 3; echo first; done"]
+      resources:
+        limits:
+          memory: "64Mi"
+          cpu: "50m"
+    - name: second
+      image: busybox
+      command: ["/bin/sh", "-c", "while true;do sleep 3; echo second; done"]
+      resources:
+        limits:
+          memory: "64Mi"
+          cpu: "50m"
+    - name: third
+      image: busybox
+      command: ["/bin/sh", "-c", "while true;do sleep 3; echo second; done"]
+      resources:
+        limits:
+          memory: "64Mi"
+          cpu: "50m"

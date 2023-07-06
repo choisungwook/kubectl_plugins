@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: dfpv-example
+spec:
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 1Gi
+  claimRef:
+    name: dfpv-example
+    namespace: default
+  hostPath:
+    path: "/tmp/busybox-dfpv"

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stern-nginx
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: stern-nginx
+  template:
+    metadata:
+      labels:
+        app: stern-nginx
+    spec:
+      containers:
+      - name: stern-nginx
+        image: nginx
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "50m"
+        readinessProbe:
+          httpGet:
+            path: /not-exist
+            port: 80
+          failureThreshold: 1
+          periodSeconds: 10
+        ports:
+        - containerPort: 80

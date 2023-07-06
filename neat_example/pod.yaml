@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busbox-neat
+  namespace: default
+  labels:
+    name: busbox-neat
+spec:
+  containers:
+    - name: busbox-neat
+      image: busybox
+      command: ["/bin/sh", "-c", "while true;do sleep 5; echo sleep; done"]
+      resources:
+        limits:
+          memory: "64Mi"
+          cpu: "50m"

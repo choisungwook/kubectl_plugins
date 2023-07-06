@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dfpv-example
+  namespace: default
+  labels:
+    name: dfpv-example
+spec:
+  containers:
+    - name: dfpv-example
+      image: busybox
+      command: ["/bin/sh", "-c", "while true;do sleep 5; echo sleep; done"]
+      volumeMounts:
+        - mountPath: /usr/share/busybox
+          name: test
+      resources:
+        limits:
+          memory: "64Mi"
+          cpu: "50m"
+  volumes:
+    - name: test
+      persistentVolumeClaim:
+        claimName: dfpv-example
