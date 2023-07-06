@@ -1,3 +1,25 @@
+- [개요](#개요)
+- [전제조건](#전제조건)
+- [kubectl 설정](#kubectl-설정)
+  - [kubectl 자동완성](#kubectl-자동완성)
+  - [alias k=kubectl](#alias-kkubectl)
+  - [kubecolor](#kubecolor)
+- [context 관련 도구](#context-관련-도구)
+  - [ctx](#ctx)
+- [리소스 조회](#리소스-조회)
+  - [neat](#neat)
+- [쿠버네티스 리소스 배포관련 도구](#쿠버네티스-리소스-배포관련-도구)
+  - [kubenet](#kubenet)
+- [쿠버네티스 리소스 조회](#쿠버네티스-리소스-조회)
+  - [lineage](#lineage)
+  - [sick-pods](#sick-pods)
+- [로그 조회](#로그-조회)
+  - [stern](#stern)
+- [자원 모니터링](#자원-모니터링)
+  - [resource-capacity](#resource-capacity)
+  - [view-allocations](#view-allocations)
+- [참고자료](#참고자료)
+
 # 개요
 * 쿠버네티스 CLI 유티릴티 도구 정리
 
