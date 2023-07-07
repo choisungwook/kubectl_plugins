@@ -18,6 +18,9 @@
 - [자원 모니터링](#자원-모니터링)
   - [resource-capacity](#resource-capacity)
   - [view-allocations](#view-allocations)
+- [쿠버네티스 관리 도구](#쿠버네티스-관리-도구)
+  - [openlens](#openlens)
+  - [k9s](#k9s)
 - [참고자료](#참고자료)
 
 # 개요
@@ -104,10 +107,10 @@ kubectl krew install ctx
 * 도구 사용방법
 ```bash
 # 컨텍스트 조회
-ctx
+kubectl ctx
 
 # docker-desktop 컨텍스트 사용
-ctx docker-desktop
+kubectl ctx docker-desktop
 ```
 
 # 리소스 조회
@@ -242,8 +245,6 @@ kubectl stern -n default . --include "404"
 # default namespace 모든 pod 로그에서 first만 제외
 kubectl stern -n default . --exclude "first"
 
-stern web-server --since 1h --tail 100 --exclude .*GET /robots.txt.*
-
 # 예제 삭제
 kubectl delete -f stern_example
 ```
@@ -295,6 +296,14 @@ kubectl view-allocations -g namespace
 ![](imgs/view-1.png)
 
 ![](imgs/view-2.png)
+
+# 쿠버네티스 관리 도구
+
+## openlens
+* GUI기반 도구
+
+## k9s
+* CLI기반 관리 도구
 
 # 참고자료
 * https://alex-moss.medium.com/down-with-the-krew-my-favourite-kubectl-plugins-279d8d2d5640
