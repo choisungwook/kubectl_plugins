@@ -6,11 +6,10 @@
   - [kubecolor](#kubecolor)
 - [context 관련 도구](#context-관련-도구)
   - [ctx](#ctx)
-- [리소스 조회](#리소스-조회)
-  - [neat](#neat)
 - [쿠버네티스 리소스 배포관련 도구](#쿠버네티스-리소스-배포관련-도구)
   - [kubenet](#kubenet)
 - [쿠버네티스 리소스 조회](#쿠버네티스-리소스-조회)
+  - [neat](#neat)
   - [lineage](#lineage)
   - [sick-pods](#sick-pods)
 - [로그 조회](#로그-조회)
@@ -131,27 +130,6 @@ kind delete cluster --name cluster-a
 kind delete cluster --name cluster-b
 ```
 
-# 리소스 조회
-## neat
-* 도구 설명: kubectl get pod {pod이름} -oyaml출력 결과를 읽기좋게 필터링
-* 도구 설치 방법
-```bash
-kubectl krew install neat
-```
-
-* 도구 사용방법
-```bash
-# manifest 배포
-kubectl apply -f ./neat_example
-
-# 도구 사용
-kubectl -n default get pod busbox-neat -oyaml
-kubectl -n default get pod busbox-neat -oyaml | kubectl neat
-
-# 삭제
-kubectl delete -f ./neat_example
-```
-
 # 쿠버네티스 리소스 배포관련 도구
 ## kubenet
 * 도구 설명: deprecated API 검증
@@ -174,6 +152,26 @@ helm template --version=7.10 --set ingress.enabled=true elastic elastic/elastics
 ![](imgs/kubent.png)
 
 # 쿠버네티스 리소스 조회
+## neat
+* 도구 설명: kubectl get pod {pod이름} -oyaml출력 결과를 읽기좋게 필터링
+* 도구 설치 방법
+```bash
+kubectl krew install neat
+```
+
+* 도구 사용방법
+```bash
+# manifest 배포
+kubectl apply -f ./neat_example
+
+# 도구 사용
+kubectl -n default get pod busbox-neat -oyaml
+kubectl -n default get pod busbox-neat -oyaml | kubectl neat
+
+# 삭제
+kubectl delete -f ./neat_example
+```
+
 ## lineage
 * 도구 설명: 쿠버네티스 리소스 관계도 출력
 * 도구 설치 방법
