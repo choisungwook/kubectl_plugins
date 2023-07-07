@@ -113,6 +113,24 @@ kubectl ctx
 kubectl ctx docker-desktop
 ```
 
+* 예제
+```bash
+# kind cluster 2개 생성(docker와 kind가 설치되어있어야 실행됨)
+cd ctx_example/
+kind create cluster --config cluster-a.yaml
+kind create cluster --config cluster-b.yaml
+
+# context 조회
+kubectl ctx
+
+# context 전환
+kubectl ctx kind-cluster-b
+
+# kind cluster 삭제
+kind delete cluster --name cluster-a
+kind delete cluster --name cluster-b
+```
+
 # 리소스 조회
 ## neat
 * 도구 설명: kubectl get pod {pod이름} -oyaml출력 결과를 읽기좋게 필터링
