@@ -168,7 +168,7 @@ helm repo add elastic https://helm.elastic.co
 helm repo add
 
 # 도구 사용
-helm template --version=7.10 --set ingress.enabled=true elastic elastic/elasticsearch | kubent -f - --target-version=1.25
+helm template --version=7.10 --set ingress.enabled=true elastic elastic/elasticsearch | kubent -f - -c=false  --target-version=1.25
 ```
 
 ![](imgs/kubent.png)
