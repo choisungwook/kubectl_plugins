@@ -243,8 +243,8 @@ kubectl stern pod-query [flags]
 # 예제 생성
 kubectl apply -f stern_example
 
-# default namespace에서 b로 시작하는 pod조회
-kubectl stern -n default b
+# default namespace에서 stern로 시작하는 pod조회
+kubectl stern -n default stern
 
 # default namespace 모든 pod 로그 조회
 kubectl stern -n default .

@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: busybox-stern
+  name: stern-busybox
   namespace: default
   labels:
-    name: busybox-stern
+    name: stern-busybox
 spec:
   containers:
     - name: first
